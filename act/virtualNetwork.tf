@@ -87,6 +87,12 @@ resource "azurerm_storage_account" "my_storage" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
+
+resource "azurerm_storage_container" "example" {
+  name                  = "vhds"
+  storage_account_name  = azurerm_storage_account.my_storage.name
+  container_access_type = "blob"
+}
   
 resource "azurerm_app_service_plan" "app_service_plan" {
   name                = "azure-functions-test-service-plan"
