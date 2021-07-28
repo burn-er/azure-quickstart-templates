@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "~>2.0"
     }
   }
@@ -11,8 +11,8 @@ provider "azurerm" {
 }
 
 resource "random_integer" "rnd_int" {
-  min     = 1
-  max     = 10000
+  min = 1
+  max = 10000
 }
 
 resource random_string "password" {
@@ -127,5 +127,5 @@ resource "azurerm_postgresql_configuration" "example" {
   name                = "log_checkpoints"
   resource_group_name = "testrg"
   server_name         = azurerm_postgresql_server.example.name
-  value               = "off"
+  value               = "on"
 }
