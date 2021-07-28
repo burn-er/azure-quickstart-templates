@@ -28,7 +28,7 @@ resource "azurerm_network_interface" "ni_linux" {
   name                = "linux"
   location            = "East US"
   resource_group_name = "testrg2"
-  enable_accelerated_networking = true
+  enable_accelerated_networking = false
 
   ip_configuration {
     name                          = "internal"
